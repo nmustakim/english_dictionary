@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'models/screens/dictionary_home.dart';
+import 'models/screens/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.indigo),
       debugShowCheckedModeBanner: false,
-      home: const DictionaryHome(),
+      home: const SplashScreen(),
     );
   }
 }

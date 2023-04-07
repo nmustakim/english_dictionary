@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../remote_service.dart';
+import '../../remote_service/dictionary_remote_service.dart';
 import '../word_details_model.dart';
 
 class DictionaryHome extends StatefulWidget {
@@ -77,7 +76,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                   )
                 : Expanded(
                     child: FutureBuilder(
-                        future: RemoteService()
+                        future: DictionaryRemoteService()
                             .fetchWordDetails(word: search!.text),
                         builder: (context,
                             AsyncSnapshot<List<WordDetailsModel>> snapshot) {

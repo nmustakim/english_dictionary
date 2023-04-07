@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'models/word_details_model.dart';
+import '../models/word_details_model.dart';
 
-class RemoteService {
+class DictionaryRemoteService {
   Future<List<WordDetailsModel>> fetchWordDetails({String? word}) async {
     final url = "https://api.dictionaryapi.dev/api/v2/entries/en/$word";
     try {
