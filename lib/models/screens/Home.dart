@@ -56,14 +56,15 @@ setState(() {
             child: FutureBuilder(future:RemoteService().fetchWordDetails(word: search!.text),builder: (context,AsyncSnapshot<List<WordDetails>> snapshot){
               if(snapshot.hasData) {
                 print(snapshot.data);
-                return ListView(children: List.generate(snapshot.data!.length, (index) {
-
+                return ListView.builder(itemCount:snapshot.data!.length.compareTo(0),itemBuilder: (context,index) {
                   final data = snapshot.data![index];
-                  return Card(child: ListTile(title: Text(data.word!),subtitle: Text((data.meanings![index].definitions![index].definition!.isNotEmpty )?data.meanings![index].definitions![index].definition!:"null"),trailing: Text(data.meanings![index].partOfSpeech!),));
-                }),
-
-
-                );
+                  return Card(child: ListTile(title: Text(data.word!),
+                    subtitle: Text(
+                        (data.meanings![index].definitions![index].definition!
+                            .isNotEmpty) ? data.meanings![index]
+                            .definitions![index].definition! : "null"),
+                    trailing: Text(data.meanings![index].partOfSpeech!),));
+                } );
               }
               else if(snapshot.hasError){
                 return Text(snapshot.error.toString());
