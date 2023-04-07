@@ -1,5 +1,6 @@
+import 'package:english_to_english_dictionary/screens/splash.dart';
 import 'package:flutter/material.dart';
-import 'models/screens/splash.dart';
+
 
 void main() {
   runApp(const MyApp());

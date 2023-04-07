@@ -4,19 +4,20 @@
 
 import 'dart:convert';
 
-List<WordDetailsModel> wordDetailsFromJson(String str) => List<WordDetailsModel>.from(
-    json.decode(str).map((x) => WordDetailsModel.fromJson(x)));
+List<WordDetailsModel> wordDetailsFromJson(String str) =>
+    List<WordDetailsModel>.from(
+        json.decode(str).map((x) => WordDetailsModel.fromJson(x)));
 
 String wordDetailsToJson(List<WordDetailsModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class WordDetailsModel {
   WordDetailsModel({
-     this.word,
-     this.phonetic,
-     this.phonetics,
-     this.origin,
-     this.meanings,
+    this.word,
+    this.phonetic,
+    this.phonetics,
+    this.origin,
+    this.meanings,
   });
 
   String? word;
@@ -25,7 +26,8 @@ class WordDetailsModel {
   String? origin;
   List<Meaning>? meanings;
 
-  factory WordDetailsModel.fromJson(Map<String, dynamic> json) => WordDetailsModel(
+  factory WordDetailsModel.fromJson(Map<String, dynamic> json) =>
+      WordDetailsModel(
         word: json["word"],
         phonetic: json["phonetic"],
         phonetics: List<Phonetic>.from(

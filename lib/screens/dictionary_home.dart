@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../remote_service/dictionary_remote_service.dart';
-import '../word_details_model.dart';
+import '../models/word_details_model.dart';
 
 class DictionaryHome extends StatefulWidget {
   const DictionaryHome({Key? key}) : super(key: key);

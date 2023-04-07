@@ -1,5 +1,6 @@
-import 'package:english_to_english_dictionary/models/screens/dictionary_home.dart';
 import 'package:flutter/material.dart';
+
+import 'dictionary_home.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -52,7 +53,13 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontWeight: FontWeight.bold),
                 ),
               )),
-          const Positioned(top:320,left:85,child: Text('Definition,Parts of speech etc...',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),))
+          const Positioned(
+              top: 320,
+              left: 85,
+              child: Text(
+                'Definition,Parts of speech etc...',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ))
         ],
       ),
     );
